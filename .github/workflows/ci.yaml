@@ -23,7 +23,7 @@ jobs:
     - name: Executando teste unitarios
       run: make tests
 
-    -name: Build
-    run: make build
+    - name: Build
+      run: make build
 
     
