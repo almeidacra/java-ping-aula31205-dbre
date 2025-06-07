@@ -1,3 +1,6 @@
+tests:
+	mvn test
+
 build:
 	mvn clean
 	mvn package
@@ -5,5 +8,12 @@ build:
 run:
 	mvn spring-boot:run
 
-tests:
-	mvn test
+c_build: 
+	docker build -t java-ping-aula31205-dbre .
+
+c_run_it:
+	docker run -it java-ping-aula31205-dbre /bin/bash
+
+c_run:
+	docker run -d -p 8000:8080 -e MENSAGEM=Demosntração java-ping-aula31205-dbre 
+
