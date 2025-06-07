@@ -7,23 +7,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-  construir:
-
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-    - name: Executando teste unitarios
-      run: make tests
+      - name: Configurar JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
 
-    - name: Build
-      run: make build
+      - name: Executar testes unitários
+        run: make tests
 
-    
+      - name: Compilar projeto
+        run: make build
