@@ -2,9 +2,8 @@ name: Continou
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "feature/*" ]
+
 
 jobs:
   build:
